@@ -4,11 +4,11 @@ build-backend = "hatchling.build"
 
 [project]
 name = "neoteroi-mkdocs"
-dynamic = ["version"]
+version = "1.1.3a"
 authors = [{ name = "Roberto Prevato", email = "roberto.prevato@gmail.com" }]
 description = "Plugins for MkDocs and Python Markdown"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.9"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "License :: OSI Approved :: MIT License",
@@ -32,7 +32,7 @@ keywords = [
     "documentation",
 ]
 dependencies = [
-    "essentials-openapi>=1.2.1",
+    "essentials-openapi @ git+https://github.com/drmorr0/essentials-openapi",
     "mkdocs",
     "httpx",
     "click",
@@ -42,6 +42,9 @@ dependencies = [
 
 [tool.hatch.version]
 path = "neoteroi/mkdocs/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["neoteroi"]
